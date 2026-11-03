@@ -1,4 +1,5 @@
 :root{--paper:#fbfaf8;--ink:#292a2c;--muted:#707174;--accent:#75464d;--line:#e5e2dd;--serif:Georgia,"Times New Roman","Songti SC",serif;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,"PingFang SC","Microsoft YaHei",sans-serif}
+[hidden]{display:none!important}
 .journal-index{white-space:nowrap;font-style:normal;font-weight:500}
 .record-list .camp-entry{row-gap:16px;margin-bottom:0}
 .camp-gallery{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -67,3 +68,39 @@
 @media(max-width:760px){.photography-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:calc(75vw - 42.75px);gap:16px 13px}.hobby-list{gap:10px 22px}.photography-section{margin-top:28px}}
 @media(max-width:560px){html{scroll-padding-top:130px}.header-inner{flex-wrap:wrap;row-gap:12px}.site-header nav{width:100%;justify-content:space-between;gap:14px}.site-header nav a[aria-current]:after{bottom:-18px}.hobby-list{gap:10px 16px;font-size:12px}.hobby-list span{font-size:10px;margin-left:2px}}
 @media print{.hobby-list{gap:20px}.photography-grid{grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:120px}.photography-grid figure{break-inside:avoid}}
+
+/* The website is a short introduction; the standalone CV will be a download. */
+.cv-download{display:inline-flex;align-items:center;gap:7px;padding:4px 10px;border:1px solid #d7d1ca;border-radius:3px;background:transparent;color:var(--accent);font:inherit;font-size:12px;line-height:1.5;text-decoration:none}
+.cv-format{font-size:9px;letter-spacing:.04em}
+.cv-download-placeholder{display:inline-flex;align-items:center;gap:7px}
+.cv-download:disabled{color:#77736f;cursor:default}
+.cv-download-placeholder #cv-pending{font-size:10px;color:var(--muted)}
+.more-honors{font-size:12px;margin-top:6px}
+.more-honors>summary{color:var(--accent);cursor:pointer;width:fit-content}
+.more-honors>summary span{font-size:10px;color:var(--muted)}
+.more-honors[open]>.record-list{padding-top:22px}
+.education-item{display:grid;grid-template-columns:64px minmax(0,1fr);gap:16px;align-items:start}
+.school-logo{display:flex;width:64px;height:64px;align-items:center;justify-content:center;overflow:hidden;margin-top:3px}
+.school-logo img{display:block;width:64px;height:64px;object-fit:cover}
+.school-logo img[src*="renmin"]{transform:scale(1.13)}
+.education-item>div>p{font-size:13px;line-height:1.75;margin-top:3px}
+.education-item>div>p.small{font-size:11px;line-height:1.65;margin-top:5px}
+.research-overview{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:32px;padding:25px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.research-overview>div{position:relative;padding-left:34px}
+.strand-number{position:absolute;left:0;top:1px;font-size:11px;color:var(--accent);font-variant-numeric:tabular-nums}
+.research-overview h2{font-size:16px;font-weight:600;line-height:1.55}
+.research-overview h2 span{display:block;font-size:11px;color:var(--muted);font-weight:400;letter-spacing:.04em;margin-top:3px}
+.research-overview p{font-size:13px;line-height:1.7;color:var(--muted);margin-top:9px;max-width:365px}
+.theme-browser{margin-top:24px}
+.filter-label{font-size:11px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);margin-bottom:10px}
+.theme-filters{display:flex;gap:8px;flex-wrap:wrap}
+.theme-filters button{font-size:12px;line-height:1.6;padding:6px 12px;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--muted);cursor:pointer}
+.theme-filters button:hover{border-color:#bcb0ae;color:var(--accent)}
+.theme-filters button[aria-pressed="true"]{background:#75464d;color:#fff;border-color:#75464d}
+.filter-status{font-size:11px;color:var(--muted);margin-top:11px!important;min-height:18px}
+.theme-label{display:inline-block;font-size:10px;line-height:1.6;color:#716765;border-left:2px solid #b79c9f;padding-left:7px;margin-top:10px}
+.theme-label .translation{font-size:10px;margin-left:3px}
+.theme-intimacy{border-color:#a38a68}.theme-labor{border-color:#ae7c86}.theme-media{border-color:#91a39f}
+.publication-list .publication:first-child{border-top:0;padding-top:0}
+@media(max-width:760px){.research-overview{grid-template-columns:1fr;gap:22px;margin-top:26px;padding:22px 0}.research-overview>div{padding-left:29px}.research-overview h2{font-size:15px}.research-overview p{font-size:12px;margin-top:6px;max-width:none}.theme-filters button{font-size:11px;padding:6px 9px}.theme-label .translation{display:none}.education-item{grid-template-columns:58px minmax(0,1fr);gap:14px}.school-logo,.school-logo img{width:58px;height:58px}}
+@media print{.theme-browser,.cv-download-placeholder{display:none}.research-overview{margin-top:20px}.school-logo,.school-logo img{width:42px;height:42px}.education-item{grid-template-columns:42px 1fr}.theme-label{font-size:8pt}}
