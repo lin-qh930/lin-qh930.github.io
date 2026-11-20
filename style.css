@@ -117,3 +117,60 @@
 .journal-index-note{margin-top:-12px;margin-bottom:20px}
 .record-list.project-list li{display:block}
 #news,#wanghong-local-chinese-concept{scroll-margin-top:96px}
+
+.translation-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.translation-project {
+  display: grid;
+  grid-template-columns: clamp(5rem, 13vw, 7.25rem) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(0.875rem, 2vw, 1.25rem);
+}
+
+.translation-cover {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(41, 42, 44, 0.15);
+}
+
+.translation-project-info h3 {
+  margin: 0.2rem 0 0.35rem;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+}
+
+.translation-project-info cite {
+  font-style: italic;
+}
+
+.translation-project-info p {
+  color: var(--muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.translation-project-info .translation-project-detail {
+  margin-top: 0.45rem;
+}
+
+.translation-project-info h3 a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+}
+
+@media (max-width: 760px) {
+  .translation-projects { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media print {
+  .translation-project { break-inside: avoid; }
+}
